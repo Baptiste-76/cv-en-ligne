@@ -35,9 +35,28 @@ html, body {
 
 .nav-item.active .nav-link.btn, .nav-item:hover .nav-link.btn {
     background-color: #cf9f69;
-    font-size: medium;
     border: solid #011f55 2px;
     color: #011f55 !important;
+}
+
+@media screen and (orientation: landscape) {
+    .nav-item {
+        height: 10vh;
+    }
+    .nav-link.btn {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    .nav-item {
+        height: unset;
+    }
+    .nav-link.btn {
+        padding: 0.9rem 1rem;
+        margin-bottom: 0 !important;
+    }
 }
 
 /********************************* JUMBOTRON **************************************/
@@ -50,15 +69,81 @@ html, body {
     font-size: 6vh;
 }
 
+.goals-content {
+    font-size: 4vh !important;
+}
+
+@media screen and (min-height: 768px) {
+    .goals-content {
+        font-size: 3vh !important;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .type-writer {
+        font-size: 12vh;
+    }
+    
+    .goals-content {
+        font-size: 8vh !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    .type-writer {
+        font-size: 10vh;
+    }
+    
+    .goals-content {
+        font-size: 5vh !important;
+    }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+    .type-writer {
+        font-size: 10vh;
+    }
+    
+    .goals-content {
+        font-size: 4vh !important;
+    }
+}
+
+@media screen and (min-width: 2500px) and (orientation: landscape) {
+    .type-writer {
+        font-size: 8vh;
+    }
+    
+    .goals-content {
+        font-size: 3vh !important;
+    }
+}
+
 /*********************************** FLIP *****************************************/
 
 #frontend, #backend {
     height: 50vh;
+    width: 100vw;
 }
 
-@media screen and (max-width: 991px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
     #frontend, #backend {
         height: 100vh;
+        width: 50vw;
+    }
+
+    .flip-card-back ul {
+        font-size: 5vh !important; 
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    #frontend, #backend {
+        height: 50vh;
+    }
+
+    .flip-card-back ul {
+        font-size: 2.5vh !important; 
     }
 }
 
@@ -137,8 +222,8 @@ html, body {
     background-color: #0098ff;
 }
 
-ul {
-    font-size: 2.5vh !important; 
+.flip-card-back ul {
+    font-size: 2.5vh ; 
     list-style-type: none;
 }
 
@@ -156,49 +241,74 @@ ul {
 /********************************** CAROUSEL **************************************/
 
 #projects {
-    width: 70%;
-}
-
-.carousel-item {
-    border: solid #cf9f69 10px;
+    width: 100%;
 }
 
 .notice {
     max-width: 100% !important;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (min-width: 2500px) {
+    .notice {
+        font-size: 1.5vh;
+    }
+}
+
+.carousel-item {
+    border: solid #cf9f69 5px;
+}
+
+.carousel-caption {
+    padding-bottom: 0;
+    bottom: 5px;
+}
+
+.carousel-caption h1, .carousel-caption a {
+    font-size: 3vh;
+}
+
+.carousel-caption h3, .carousel-indicators {
+    display: none ;
+}
+
+@media screen and (min-width: 576px) {
+    .carousel-item {
+        border: solid #cf9f69 10px;
+    }
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
+        font-size: 8vh;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
+        font-size: 5vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
     #projects {
-        width: 100%;
+        width: 70%;
     }
 
     .carousel-caption {
-        padding-bottom: 0;
-        bottom: 5px;
+        padding-bottom: 20px;
+        bottom: 20px;
+    }
+
+    .carousel-caption h3 {
+        display: block ;
+    }
+
+    .carousel-indicators {
+        display: flex;
     }
 
     .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
         font-size: 3vh;
-    }
-
-    .carousel-indicators {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 767px) and (orientation: portrait) {
-    .carousel-caption h3 {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 575px) and (orientation: portrait) {
-    .carousel-caption h1, .carousel-caption a {
-        font-size: 2vh;
-    }
-
-    .carousel-item {
-        border:  solid #cf9f69 5px;
     }
 }
 
@@ -211,23 +321,30 @@ ul {
     width: 100%;
     height: 8vh;
     text-align: center;
-    font-size: 4vh;
+    font-size: 3vh;
     border: none;
     outline: none;
     transition: 0.4s;
     -webkit-transition: 0.4s;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (min-width: 576px) {
     .accordion {
-        font-size: 3vh;
+        font-size: 4vh;
     }
 }
 
-@media screen and (max-width: 991px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
     .accordion {
         height: 15vh;
         font-size: 6vh;
+    }
+}
+
+@media screen and (min-width: 992px ) and (orientation: landscape) {
+    .accordion {
+        height: 10vh;
+        font-size: 4vh;
     }
 }
 
@@ -271,6 +388,52 @@ ul {
     background-color: #011f55;
     color: white;
     border: none;
+    font-size: 3vh;
+}
+
+.contact-method {
+    font-size: 2.5vh;
+}
+
+@media screen and (orientation: landscape) {
+    .card-header {
+        font-size: 6vh;
+    }
+    .contact-method {
+        font-size: 5vh;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .contact-method {
+        font-size: 1.3vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .contact-method {
+        font-size: 4vh;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape)  {
+    .card-header {
+        font-size: 3vh;
+    }
+
+    .contact-method {
+        font-size: 2.5vh;
+    }
+}
+
+@media screen and (min-width: 2500px) and (orientation: landscape)  {
+    .card-header {
+        font-size: 2vh;
+    }
+
+    .contact-method {
+        font-size: 1.5vh;
+    }
 }
 
 #interactive-photo:hover {
@@ -326,12 +489,45 @@ ul {
 
 /************************************ FORM *****************************************/
 label, .btn[type="submit"] {
-    font-size: 1.8vh;
+    font-size: 2.5vh;
 }
 .form-control {
     background-color: #011f55;
     color: white;
     font-size: 1.5vh;
+}
+
+@media screen and (orientation: landscape) {
+    label, .btn[type="submit"] {
+        font-size: 5vh;
+    }
+    .form-control {
+        background-color: #011f55;
+        color: white;
+        font-size: 5vh;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    label, .btn[type="submit"] {
+        font-size: 2.5vh;
+    }
+    .form-control {
+        background-color: #011f55;
+        color: white;
+        font-size: 2.5vh;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    label, .btn[type="submit"] {
+        font-size: 2vh;
+    }
+    .form-control {
+        background-color: #011f55;
+        color: white;
+        font-size: 2vh;
+    }
 }
 
 label.required:before {
@@ -341,6 +537,31 @@ label.required:before {
 #who-am-i {
     background-color: #cf9f69;
     border: none;
+    font-size: 3vh !important;
+}
+
+@media screen and (min-width: 768px) {
+    .who-am-i-content {
+        font-size: 3vh !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    .who-am-i-content {
+        font-size: 5vh !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    .who-am-i-content {
+        font-size: 3vh !important;
+    }
+}
+
+@media screen and (min-width: 2500px) and (orientation: landscape) {
+    .who-am-i-content {
+        font-size: 2.5vh !important;
+    }
 }
 
 /*********************************** FOOTER ***************************************/
@@ -377,16 +598,16 @@ label.required:before {
 }
 
 .pictures-container:hover .overlay {
-    height: 20%;
+    height: 30%;
 }
 
 .text-is-visible {
-    height: 20%;
+    height: 30%;
 }
 
 .text {
     color: white;
-    font-size: 1.5vh;
+    font-size: 2vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -396,13 +617,37 @@ label.required:before {
     text-align: center;
 }
 
-@media screen and (max-width: 991px) and (orientation: landscape) {
-    .text {
-        font-size: 5vh
+@media screen and (min-width: 768px) {
+    .pictures-container:hover .overlay {
+        height: 20%;
+    }
+    
+    .text-is-visible {
+        height: 20%;
     }
 }
 
-@media screen and (min-width: 992px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
+    .text {
+        font-size: 5vh
+    }
+
+    .pictures-container:hover .overlay {
+        height: 20%;
+    }
+    
+    .text-is-visible {
+        height: 20%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .text {
+        font-size: 4vh
+    }
+}
+
+@media screen and (min-width: 1200px) {
     .text {
         font-size: 2.5vh
     }
@@ -414,13 +659,13 @@ label.required:before {
     background-color: #0098ff;
 }
 
-#login-form label, .form-control {
-    font-size: 2vh;
+#login-form label, .login-control, .login-submit {
+    font-size: 5vh !important;
 }
 
-@media screen and (max-width: 991px) and (orientation: landscape) {
-    #login-form label, .form-control, .login-submit {
-        font-size: 5vh !important;
+@media screen and (min-width: 1200px) {
+    #login-form label, .login-control, .login-submit {
+        font-size: 3vh;
     }
 }
 
@@ -434,24 +679,20 @@ label.required:before {
     background-color: #0098ff;
 }
 
-.sender-contact {
+.sender-contact, .message p {
     color: white !important;
-    font-size: 1.5vh;
+    font-size: 2.5vh;
 }
 
-.message p {
-    font-size: 1.5vh;
-}
-
-@media screen and (max-width: 767px) and (orientation: portrait) {
-    .message p, .sender-contact {
-        font-size: 2.8vh;
-    }
-
-}
-@media screen and (max-width: 991px) and (orientation: landscape) {
+@media screen and (orientation: landscape) {
     .message p, .sender-contact {
         font-size: 5vh;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .message p, .sender-contact {
+        font-size: 1.5vh;
     }
 }
 
