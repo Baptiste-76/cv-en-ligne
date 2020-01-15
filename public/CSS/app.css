@@ -12,6 +12,7 @@ html, body {
     font-family: 'Comfortaa', cursive;
     border: none;
     transition: all 500ms;
+    -webkit-transition: all 500ms;
 }
 
 .navbar:hover {
@@ -66,6 +67,8 @@ html, body {
     width: 100%;
     height: 100%;
     perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -ms-perspective: 1000px;
 }
   
 
@@ -81,10 +84,14 @@ html, body {
   
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
 }
 
 .back-is-visible {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
 }
   
 .flip-card-front, .flip-card-back {
@@ -92,22 +99,25 @@ html, body {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .frontend-card-front, .backend-card-front {
-    background-position: center; 
+    background-position: center;
     background-repeat: no-repeat; 
-    background-size: cover; 
+    background-size: cover;
     height: 100%;
     width: 100%;
 }
 
 .frontend-card-back, .backend-card-back {
     transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
 }
 
 .frontend-card-front {
-    background-image: url("../pictures/frontend_resized_recolored.png"); 
+    background-image: url("../pictures/frontend_resized_recolored.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -205,6 +215,7 @@ ul {
     border: none;
     outline: none;
     transition: 0.4s;
+    -webkit-transition: 0.4s;
 }
 
 @media screen and (max-width: 575px) {
@@ -264,12 +275,33 @@ ul {
 
 #interactive-photo:hover {
     animation: shake 0.5s;
+    -webkit-animation: shake 0.5s;
     animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes turn {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
 }
 
 @keyframes turn {
     0% { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
+}
+
+@-webkit-keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 @keyframes shake {
@@ -288,6 +320,8 @@ ul {
 
 #download-cv:hover {
     transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
 }
 
 /************************************ FORM *****************************************/
@@ -339,6 +373,7 @@ label.required:before {
     width: 100%;
     height: 0;
     transition: 0.5s ease;
+    -webkit-transition: 0.5s ease;
 }
 
 .pictures-container:hover .overlay {
@@ -355,9 +390,9 @@ label.required:before {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
