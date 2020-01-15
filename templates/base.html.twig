@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="/CSS/app.css">
+        <link href="https://fonts.googleapis.com/css?family=Inria+Serif&display=swap" rel="stylesheet"> 
+        <script src="https://kit.fontawesome.com/dbc1e24743.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <a class="navbar-brand" href="{{ path('homepage') }}">
+                <img src="../pictures/photo.jpg" alt="Avatar de Baptiste Bidaux" class="avatar">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse text-center" id="myNavbar">
+                <ul class="navbar-nav align-items-center" style="width: 100%;">
+                    <li class="nav-item mx-auto active">
+                        <a class="nav-link btn" href={{ path('homepage', {'_fragment': 'goals'}) }}>
+                            <i class="fas fa-bullseye"></i>
+                            Objectifs
+                        </a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'technologies'}) }}">
+                            <i class="fas fa-language"></i>
+                            Langages & Technologies
+                        </a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'projects'}) }}">
+                            <i class="fas fa-clipboard-list"></i>
+                            Réalisations
+                        </a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'experiences'}) }}">
+                            <i class="fas fa-tasks"></i>
+                            Expériences
+                        </a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'diplomas'}) }}">
+                            <i class="fas fa-graduation-cap"></i>
+                            Formations
+                        </a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'contacts'}) }}">
+                            <i class="fas fa-id-card"></i>
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        {% block body %}{% endblock %}
+
+        <div class="footer text-center">
+            <h5>Copyright &copy; - Tous droits réservés - Baptiste Bidaux - {{ "now" | date("Y")}}</h5>
+        </div>
+
+
+        {% block javascripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="/JS/app.js"></script>
+    </body>
+</html>

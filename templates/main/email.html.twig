@@ -1,0 +1,52 @@
+<h3>Nouveau mail sur le CV en ligne !</h3>
+
+<p>
+    <strong>Nom / Société : </strong>
+    {{ data.name }}
+</p>
+
+<p>
+    <strong>Objet : </strong>
+    {{ data.object }}
+</p>
+
+<p>
+    <strong>Numéro de téléphone :</strong>
+    {% if data.phone %}
+        {{ data.phone }}
+    {% else %}
+        Non-renseigné        
+    {% endif %}
+</p>
+
+<p>
+    <strong>Adresse mail : </strong>
+    {% if data.mail %}
+        {{ data.mail }}
+    {% else %}
+        Non-renseignée       
+    {% endif %}
+</p>
+
+<p>
+    <strong>Contenu :</strong>
+    {{ data.content }}
+</p>
+
+<p>
+    Pour aller sur le site :
+    <a href="http://localhost:8000" class="btn btn-success" value="CV en Ligne">CV en ligne</a>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+

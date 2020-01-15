@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap');
+
+html, body {
+    background-color: #011f55;
+    scroll-behavior: smooth;
+}
+/*********************************** NAVBAR **************************************/
+
+.navbar {
+    background-color: #0098ff;
+    font-family: 'Comfortaa', cursive;
+    border: none;
+    transition: all 500ms;
+}
+
+.navbar:hover {
+    opacity: 1;
+}
+
+.avatar {
+    max-height: 64px;
+    max-width: 64px;
+}
+
+.nav-link.btn {
+    background-color: #011f55;
+    font-size: medium;
+    border: solid #cf9f69 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.nav-item.active .nav-link.btn, .nav-item:hover .nav-link.btn {
+    background-color: #cf9f69;
+    font-size: medium;
+    border: solid #011f55 2px;
+    color: #011f55 !important;
+}
+
+/********************************* JUMBOTRON **************************************/
+
+#goals {
+    font-family: 'Dancing Script', cursive;
+}
+
+.type-writer {
+    font-size: 6vh;
+}
+
+/*********************************** FLIP *****************************************/
+
+#frontend, #backend {
+    height: 50vh;
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    #frontend, #backend {
+        height: 100vh;
+    }
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+  
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.back-is-visible {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.frontend-card-front, .backend-card-front {
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 100%;
+    width: 100%;
+}
+
+.frontend-card-back, .backend-card-back {
+    transform: rotateY(180deg);
+}
+
+.frontend-card-front {
+    background-image: url("../pictures/frontend_resized_recolored.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.frontend-card-back {
+    background-color: #cf9f69;
+    color: black;
+}
+
+.backend-card-front {
+    background-image: url("../pictures/backend_resized.png"); 
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.backend-card-back {
+    background-color: #0098ff;
+}
+
+ul {
+    font-size: 2.5vh !important; 
+    list-style-type: none;
+}
+
+.flip-card-back ul li {
+    border: 1px solid #011f55;
+    margin-top: -1px;
+    padding: 12px;
+}
+
+.header-li {
+    background-color: #011f55;
+    color: white;
+}
+
+/********************************** CAROUSEL **************************************/
+
+#projects {
+    width: 70%;
+}
+
+.carousel-item {
+    border: solid #cf9f69 10px;
+}
+
+.notice {
+    max-width: 100% !important;
+}
+
+@media screen and (max-width: 991px) {
+    #projects {
+        width: 100%;
+    }
+
+    .carousel-caption {
+        padding-bottom: 0;
+        bottom: 5px;
+    }
+
+    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
+        font-size: 3vh;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .carousel-caption h3 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) and (orientation: portrait) {
+    .carousel-caption h1, .carousel-caption a {
+        font-size: 2vh;
+    }
+
+    .carousel-item {
+        border:  solid #cf9f69 5px;
+    }
+}
+
+/********************************* ACCORDION **************************************/
+
+.accordion {
+    background-color: #0098ff;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+    font-size: 4vh;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 575px) {
+    .accordion {
+        font-size: 3vh;
+    }
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    .accordion {
+        height: 15vh;
+        font-size: 6vh;
+    }
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #cf9f69;
+    color: black;
+}
+
+.panel {
+    padding: 5px 20px;
+    background-color: #011f55;
+    color: white;
+    font-family: 'Comfortaa', cursive;
+    display: none;
+    overflow: hidden;
+} 
+
+#contacts-panel {
+    display: block;
+}
+
+#me-big-device {
+    display: none;
+}
+
+@media screen and (min-width: 1200px) {
+    #me-small-device {
+        display: none;
+    }
+    #me-big-device {
+        display: block;
+    }
+}
+
+.card:hover {
+    background-color: #cf9f69 !important;
+    color: black !important;
+}
+
+.card-header {
+    background-color: #011f55;
+    color: white;
+    border: none;
+}
+
+#interactive-photo:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes turn {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+#download-cv:hover {
+    transform: scale(1.2);
+}
+
+/************************************ FORM *****************************************/
+label, .btn[type="submit"] {
+    font-size: 1.8vh;
+}
+.form-control {
+    background-color: #011f55;
+    color: white;
+    font-size: 1.5vh;
+}
+
+label.required:before {
+    content: "*";
+}
+
+#who-am-i {
+    background-color: #cf9f69;
+    border: none;
+}
+
+/*********************************** FOOTER ***************************************/
+
+.footer {
+    color: #cf9f69;
+}
+
+/*********************************** PICTURES *************************************/
+
+.pictures-container {
+    position: relative;
+    width: 45%;
+    padding: 5px;
+}
+
+.picture {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #0098ff;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 0.5s ease;
+}
+
+.pictures-container:hover .overlay {
+    height: 20%;
+}
+
+.text-is-visible {
+    height: 20%;
+}
+
+.text {
+    color: white;
+    font-size: 1.5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    .text {
+        font-size: 5vh
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    .text {
+        font-size: 2.5vh
+    }
+}
+
+/************************************* LOGIN ***************************************/
+#login-form {
+    color: white; 
+    background-color: #0098ff;
+}
+
+#login-form label, .form-control {
+    font-size: 2vh;
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    #login-form label, .form-control, .login-submit {
+        font-size: 5vh !important;
+    }
+}
+
+/************************************* MESSAGES ************************************/
+
+#messages-page {
+    color: white;
+}
+
+.message {
+    background-color: #0098ff;
+}
+
+.sender-contact {
+    color: white !important;
+    font-size: 1.5vh;
+}
+
+.message p {
+    font-size: 1.5vh;
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    .message p, .sender-contact {
+        font-size: 2.8vh;
+    }
+
+}
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    .message p, .sender-contact {
+        font-size: 5vh;
+    }
+}
+
+.page-link {
+    color: #0098ff;
+}
+
+.page-item.active .page-link, .page-link:hover {
+    background-color: #0098ff;
+    border-color: #0098ff;
+}

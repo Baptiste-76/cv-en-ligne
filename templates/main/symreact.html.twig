@@ -1,0 +1,87 @@
+{% extends "base.html.twig" %}
+
+{% block title %}SymReact{% endblock %}
+
+{% block body %}
+    <div class="container-fluid mb-5" id="symreact">
+        <h1 style="color: white;" class="mb-3">Création d'une API de gestion de factures en React</h1>
+
+        <p style="color: white; font-size: 2vh">Afin de me perfectionner après mon diplôme, j'ai suivi une formation en ligne afin de réaliser via API Platform un gestionnaire de factures.
+        De plus, le frontend a été réalisé en React.</p>
+
+        <div class="row mb-3">
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p1.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Écran de connexion à l'application
+                    </div>
+                </div>
+            </div>
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p2.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Écran d'inscription avec rendu des erreurs de saisie
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p3.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Liste des clients
+                    </div>
+                </div>
+            </div>
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p4.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Liste des factures et de leurs états avec pagination
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p5.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Écran de modification d'une facture
+                    </div>
+                </div>
+            </div>
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p7.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Écran de création d'un client
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="pictures-container col-12 col-xl-6">
+                <img src="pictures/symreact/symreact-p6.png" alt="" class="picture">
+                <div class="overlay">
+                    <div class="text">
+                        Affichage d'un loader en attendant la réponse de la fonction asynchrone
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <a href="{{ path('homepage', {'_fragment': 'projects'}) }}" class="btn btn-danger btn-lg mx-auto">Retour au carrousel des projets</a>
+        </div>
+
+    </div>
+{% endblock %}
+
+
