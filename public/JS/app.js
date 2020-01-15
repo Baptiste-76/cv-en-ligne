@@ -65,21 +65,19 @@ $(document).ready(function() {
 })
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
-$('.flip-card-front').bind('mousedown', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
+$('.flip-card-front').bind('touchstart', function() {;
     $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
 })
-$('.flip-card-back, .li, .header-li').bind('mousedown', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    $(this).closest('.flip-card-inner').toggleClass('back-is-visible');
+$('.flip-card-front').bind('touchend', function() {;
+    $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
 })
 
+
 // Gestion des "pictures-container" pour les appareils tactiles
-$('.picture').bind('mousedown', function(event) {
-    event.stopPropagation();
-    event.preventDefault();
+$('.picture').bind('touchstart', function() {
+    $(this).next('.overlay').toggleClass('text-is-visible');
+})
+$('.picture').bind('touchend', function() {
     $(this).next('.overlay').toggleClass('text-is-visible');
 })
 
