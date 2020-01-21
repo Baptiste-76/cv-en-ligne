@@ -66,20 +66,19 @@ $(document).ready(function() {
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
 $('.flip-card-front').bind('touchstart', function(event) {
-    event.stopPropagation();
     event.preventDefault();
     $(this).closest('.flip-card-inner').removeClass('front-is-visible'); 
     $(this).closest('.flip-card-inner').addClass('back-is-visible'); 
 })
 $('.flip-card-back ul li').bind('touchstart', function(event) {
-    event.stopPropagation();
     event.preventDefault();
     $(this).closest('.flip-card-inner').removeClass('back-is-visible');
     $(this).closest('.flip-card-inner').addClass('front-is-visible');
 })
 
 // Gestion des "pictures-container" pour les appareils tactiles
-$('.picture').bind('touchstart', function() {
+$('.picture').bind('touchstart', function(event) {
+    event.preventDefault();
     $(this).next('.overlay').toggleClass('text-is-visible');
 })
 
