@@ -179,12 +179,6 @@ html, body {
     -ms-transform: rotateY(180deg);
 }
 
-.front-is-visible {
-    transform: rotateY(0deg);
-    -webkit-transform: rotateY(0deg);
-    -ms-transform: rotateY(0deg);
-}
-  
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
