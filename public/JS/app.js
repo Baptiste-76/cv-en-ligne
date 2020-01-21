@@ -65,16 +65,19 @@ $(document).ready(function() {
 })
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
-$('.flip-card-front').bind('touchstart', function() {
+$('.flip-card-front').bind('touchstart', function(e) {
     $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
+    e.preventDefault();
 })
-$('.flip-card-back ul li').bind('touchstart', function() {
+$('.flip-card-back ul li').bind('touchstart', function(e) {
     $(this).prev().closest('.flip-card-inner').toggleClass('back-is-visible'); 
+    e.preventDefault();
 })
 
 // Gestion des "pictures-container" pour les appareils tactiles
-$('.picture').bind('touchstart', function() {
+$('.picture').bind('touchstart', function(e) {
     $(this).next('.overlay').toggleClass('text-is-visible');
+    e.preventDefault();
 })
 
 // Gestion du "Bonjour à tous" dynamique (type machine à écrire)
