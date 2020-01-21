@@ -66,12 +66,14 @@ $(document).ready(function() {
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
 $('.flip-card-front').bind('touchstart', function() {
-    $(this).parent('.flip-card-inner').removeClass('front-is-visible'); 
-    $(this).parent('.flip-card-inner').addClass('back-is-visible'); 
+    console.log($(this).parent('.flip-card-inner'));
+    $(this).closest('.flip-card-inner').removeClass('front-is-visible'); 
+    $(this).closest('.flip-card-inner').addClass('back-is-visible'); 
 })
 $('.flip-card-back ul li').bind('touchstart', function() {
-    $(this).prev().closest('.flip-card-inner').removeClass('back-is-visible');
-    $(this).prev().closest('.flip-card-inner').addClass('front-is-visible');
+    console.log($(this).prev().closest('.flip-card-inner'))
+    $(this).closest('.flip-card-inner').removeClass('back-is-visible');
+    $(this).closest('.flip-card-inner').addClass('front-is-visible');
 })
 
 // Gestion des "pictures-container" pour les appareils tactiles
