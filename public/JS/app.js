@@ -68,16 +68,9 @@ $(document).ready(function() {
 $('.flip-card-front').bind('touchstart', function() {;
     $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
 })
-$('.flip-card-front').bind('touchend', function() {;
-    $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
-})
-
 
 // Gestion des "pictures-container" pour les appareils tactiles
 $('.picture').bind('touchstart', function() {
-    $(this).next('.overlay').toggleClass('text-is-visible');
-})
-$('.picture').bind('touchend', function() {
     $(this).next('.overlay').toggleClass('text-is-visible');
 })
 
