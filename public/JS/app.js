@@ -65,19 +65,18 @@ $(document).ready(function() {
 })
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
-$('.flip-card-front').bind('touchstart', function(e) {
-    $(this).parent('.flip-card-inner').toggleClass('back-is-visible'); 
-    e.preventDefault();
+$('.flip-card-front').bind('touchstart', function() {
+    $(this).parent('.flip-card-inner').removeClass('front-is-visible'); 
+    $(this).parent('.flip-card-inner').addClass('back-is-visible'); 
 })
-$('.flip-card-back ul li').bind('touchstart', function(e) {
-    $(this).prev().closest('.flip-card-inner').toggleClass('back-is-visible'); 
-    e.preventDefault();
+$('.flip-card-back ul li').bind('touchstart', function() {
+    $(this).prev().closest('.flip-card-inner').removeClass('back-is-visible');
+    $(this).prev().closest('.flip-card-inner').addClass('front-is-visible');
 })
 
 // Gestion des "pictures-container" pour les appareils tactiles
-$('.picture').bind('touchstart', function(e) {
+$('.picture').bind('touchstart', function() {
     $(this).next('.overlay').toggleClass('text-is-visible');
-    e.preventDefault();
 })
 
 // Gestion du "Bonjour à tous" dynamique (type machine à écrire)
