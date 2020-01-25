@@ -1,42 +1,45 @@
 <h3>Nouveau mail sur le CV en ligne !</h3>
 
-<p>
-    <strong>Nom / Société : </strong>
-    {{ data.name }}
-</p>
+<div class="container">
+    <div>
+        <h4>Nom / Société :</h4>
+        <p class="lead">{{ data.name }}</p>
+    </div>
+    <div>
+        <h4>Objet : </h4>
+        <p class="lead">{{ data.object }}</p>
+    </div>
+    <div>
+        <h4>Numéro de téléphone :</h4>
+        <p class="lead">
+            {% if data.phone %}
+                {{ data.phone }}
+            {% else %}
+                Non-renseigné        
+            {% endif %}
+        </p>
+    </div>
+    <div>
+        <h4>Adresse mail : </h4>
+        <p class="lead">
+            {% if data.mail %}
+                {{ data.mail }}
+            {% else %}
+                Non-renseignée       
+            {% endif %}
+        </p>
+    </div>
+    <div>
+        <h4>Contenu :</h4>
+        <p class="lead">{{ data.content }}</p>
+    </div>
+</div>
 
-<p>
-    <strong>Objet : </strong>
-    {{ data.object }}
-</p>
+<hr>
 
-<p>
-    <strong>Numéro de téléphone :</strong>
-    {% if data.phone %}
-        {{ data.phone }}
-    {% else %}
-        Non-renseigné        
-    {% endif %}
-</p>
+<a href="https://baptiste-bidaux.herokuapp.com/messages">Accéder au site</a>
 
-<p>
-    <strong>Adresse mail : </strong>
-    {% if data.mail %}
-        {{ data.mail }}
-    {% else %}
-        Non-renseignée       
-    {% endif %}
-</p>
 
-<p>
-    <strong>Contenu :</strong>
-    {{ data.content }}
-</p>
-
-<p>
-    Pour aller sur le site :
-    <a href="http://localhost:8000" class="btn btn-success" value="CV en Ligne">CV en ligne</a>
-</p>
 
 
 

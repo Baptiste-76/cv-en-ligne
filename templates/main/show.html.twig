@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Message de {{ message.name }} du {{ message.createdAt | date('d/m/Y') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container pb-5" id="message-page">
+        <h3 class="text-center text-white mb-5">
+            Message de <strong>{{ message.name }}</strong> du {{ message.createdAt | date('d/m/Y') }}
+        </h3>
+
+        <div class="jumbotron text-white" style="background-color: #0098ff;">
+            <h3 class="mb-3"><u>{{ message.object }}</u></h3>
+            <p class="lead">{{ message.content }}</p>
+
+            <hr style="border: 1px solid white;" class="w-50 my-5">
+
+            <h3 class="mb-3"><u>Contacts :</u></h3>
+
+            {% if message.phone %}
+                <a href="tel:{{ message.phone }}" style="color: white; font-size: 1.015625rem;">{{ message.phone }}</a>
+                <br><br>
+            {% else %}
+                <p class="lead">Pas de téléphone</p>
+            {% endif %}
+
+            {% if message.mail %}
+                <a href="mailto:{{ message.mail }}" style="color: white; font-size: 1.015625rem;">{{ message.mail }}</a>
+            {% else %}
+                <p class="lead">Pas de mail</p>
+            {% endif %}
+
+            <hr style="border: 1px solid white;" class="w-50 my-5">
+
+            <div>
+                <a href="{{ path('message_delete', {'id': message.id}) }}" class="btn btn-primary mb-2" style="font-size: 1.015625rem;">
+                    <i class="fas fa-trash-alt mr-2"></i>
+                    Supprimer
+                </a>
+                <br>
+                <a href="{{ path('messages_page', {'id': message.id}) }}" class="btn btn-danger mb-2" style="font-size: 1.015625rem;">
+                    <i class="fas fa-undo mr-2"></i>
+                    Retour à la liste
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -43,7 +43,7 @@ $('.navbar').mouseenter(function() {
     $(this).css('opacity', 1);
 })
 
-// Disparition de la Navabr lorsque la souris quitte sa zone (sauf si l'utilisateur se trouve en haut de la page au moment de quitter la zone de la Navbar)
+// Disparition de la Navbar lorsque la souris quitte sa zone (sauf si l'utilisateur se trouve en haut de la page au moment de quitter la zone de la Navbar)
 $('.navbar').mouseleave(function() {
     if (window.pageYOffset != 0.0) {
         setTimeout(function() {
@@ -61,6 +61,7 @@ $(document).ready(function() {
     $('#monbnb').css('margin-top', margin + "px");
     $('#login-form').css('margin-top', margin + "px");
     $('#messages-page').css('margin-top', margin + "px");
+    $('#message-page').css('margin-top', margin + "px");
 
 })
 
@@ -74,22 +75,32 @@ $('.flip-card-back ul li').bind('touchstart', function(event) {
     $(this).closest('.flip-card-inner').toggleClass('back-is-visible'); 
 })
 
-// Gestion des "pictures-container" pour les appareils tactiles
-$('.picture').bind('touchstart', function(event) {
-    event.preventDefault();
-    $(this).next('.overlay').toggleClass('text-is-visible');
-})
-
 // Gestion du "Bonjour à tous" dynamique (type machine à écrire)
 let i = 0;
 let text = "Bonjour à toutes et tous !"
-$(document).ready(function typeWriter() {
+
+function sleep() {
+    return new Promise (resolve => setTimeout(resolve, 5000));
+}
+
+$(document).ready(async function typeWriter() {
     if (i < text.length) {
         $('.type-writer').append(text.charAt(i));
         i++;
         setTimeout(typeWriter, 100);
+    } else if (i == text.length) {
+        await sleep();
+        $('.type-writer').html("");
+        i = 0;
+        typeWriter();
     }
 })
+
+// Ajout d'une ancre à l'URL lorsque le formulaire est envoyé pour que la page ne scroll pas en haut automatiquement
+function setAnchor() {
+    location.hash = 'form-anchor'
+}
+
 
 
 

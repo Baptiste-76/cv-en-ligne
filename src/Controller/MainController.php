@@ -85,42 +85,6 @@ class MainController extends AbstractController
     }
     
     /**
-     * Permet d'afficher des photos du projet Cyberpunk
-     * 
-     * @Route("/cyberpunk", name="cyberpunk_page")
-     *
-     * @return Response
-     */
-    public function cyberpunk() 
-    {
-        return $this->render('main/cyberpunk.html.twig');
-    }
-
-    /**
-     * Permet d'afficher des photos du projet SymReact
-     * 
-     * @Route("/symreact", name="symreact_page")
-     *
-     * @return Response
-     */
-    public function symreact() 
-    {
-        return $this->render('main/symreact.html.twig');
-    }
-
-    /**
-     * Permet d'afficher des photos du projet MonBnB
-     * 
-     * @Route("/monbnb", name="monbnb_page")
-     *
-     * @return Response
-     */
-    public function monbnb() 
-    {
-        return $this->render('main/monbnb.html.twig');
-    }
-
-    /**
      * Permet d'obtenir la liste des messages envoyés via le formulaire
      *
      * @Route("/messages/{page<\d+>?1}", name="messages_page")
@@ -132,9 +96,8 @@ class MainController extends AbstractController
     public function getMessages(FormRepository $repo, $page = 1)
     {
         $this->denyAccessUnlessGranted('ROLE_USER', null, "Un utilisateur a esssayé de se connecter à cette page !");
-
         
-        $limit = 5;
+        $limit = 8;
         $offset = $limit * $page - $limit;
         $total = count($repo->findAll());
         $pages = ceil($total / $limit);
@@ -147,5 +110,47 @@ class MainController extends AbstractController
             'pages' => $pages,
             'limit' => $limit
         ]);
+    }
+
+    /**
+     * Permet de voir un message en particulier
+     *
+     * @Route("/messages/{id}/show", name="message_show")
+     * 
+     * @param Form $form
+     * @param ManagerRegistry $managerRegistry
+     * 
+     * @return Response
+     */
+    public function showMessage(Form $form, FormRepository $repo)
+    {
+        $message = $repo->findOneBy(['id' => $form->getId()]);
+
+        return $this->render('main/show.html.twig', [
+            'message' => $message
+        ]);
+    }
+
+    /**
+     * Permet de supprimer un message
+     *
+     * @Route("/messages/{id}/delete", name="message_delete")
+     * 
+     * @return Response
+     */
+    public function deleteMessage(Form $form, ManagerRegistry $managerRegistry) 
+    {
+        $manager = $managerRegistry->getManager();
+
+        $manager->remove($form);
+        $manager->flush();
+
+        $this->addFlash(
+            'delete-success',
+            'Le message de ' . $form->getName() . ' a bien été supprimé !'
+        );
+
+        return $this->redirectToRoute('messages_page');
+
     }
 }

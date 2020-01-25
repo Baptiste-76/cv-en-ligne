@@ -1,37 +1,80 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Messagerie{% endblock %}
+{% block title %}
+    Messagerie
+{% endblock %}
 
 {% block body %}
-    <div class="container" id="messages-page">
-        <h1 class="my-5">Liste des messages</h1>
+    <div class="container-fluid pb-5" id="messages-page">
+        <h1 class="my-5 text-white text-center">Liste des messages</h1>
 
-        {% for message in messages %}
-            <div class="container message">
-                <h3>
-                    Message de <strong>{{ message.name }}</strong> envoyé le <strong>{{ message.createdAt | date("d/m/Y \\à H:i") }}</strong>
-                </h3>
-                <div class="sender-contact">
-                    (
-                        {% if message.phone %}
-                            <a href="tel:{{ message.phone }}" class="number" style="color: white;">{{ message.phone }}</a>
-                        {% else %}
-                            Pas de téléphone
-                        {% endif %}
-                        -
-                        {% if message.mail %}
-                            <a href="mailto:{{ message.mail }}" style="color: white;">{{ message.mail }}</a>
-                        {% else %}
-                            Pas de mail
-                        {% endif %}                 
-                    )
-                </div>
-                <h4 class="mt-3">
-                    <strong>{{ message.object }}</strong>
-                </h4>
-                <p>{{ message.content }}</p>
+        {% for message in app.flashes('delete-success') %}
+            <div class="flash-notice my-2">
+                <div class="alert alert-dismissible alert-success text-center">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h3>
+                        {{ message }}
+                    </h3>
+                </div>      
             </div>
         {% endfor %}
+
+
+        <div class="table-responsive-md my-3">
+            <table class="table table-hover table-bordered text-white lead" style="background-color: #0098ff;">
+                <thead class="thead bg-light" style="color: black;">
+                    <tr class="text-center">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Date d'envoi</th>
+                        <th scope="col">Objet</th>
+                        <th scope="col">Contenu</th>
+                        <th scope="col">Téléphone</th>
+                        <th scope="col">Adresse mail</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for message in messages %}
+                        <tr class="text-center">
+                            <th scope="row">{{ message.id }}</th>
+                            <td>{{ message.name }}</td>
+                            <td>{{ message.createdAt | date("d/m/Y \\à H:i") }}</td>
+                            <td>{{ message.object }}</td>
+                            <td>
+                                {% set text = message.content | split('.') %}
+                                {{ text[0] }}
+                            </td>
+                            <td>
+                                {% if message.phone %}
+                                    <a href="tel:{{ message.phone }}" style="color: white;">{{ message.phone }}</a>
+                                {% else %}
+                                    Pas de téléphone
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if message.mail %}
+                                    <a href="mailto:{{ message.mail }}" style="color: white;">{{ message.mail }}</a>
+                                {% else %}
+                                    Pas de mail
+                                {% endif %}   
+                            </td>
+                            <td>
+                                <a href="{{ path('message_delete', {'id': message.id}) }}" class="btn btn-primary mr-2 mb-2" style="font-size: 1.015625rem;">
+                                    <i class="fas fa-trash-alt mr-2"></i>
+                                    Suppr.
+                                </a>
+                                <a href="{{ path('message_show', {'id': message.id}) }}" class="btn btn-danger mr-2 mb-2" style="font-size: 1.015625rem;">
+                                    <i class="fas fa-eye mr-2"></i>
+                                    Voir
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
         <div class="d-flex justify-content-center">
             <ul class="pagination pagination-lg">
@@ -50,7 +93,9 @@
         </div>
 
         <div class="d-flex justify-content-center mb-3">
-            <a href="{{ path('app_logout') }}" class="btn btn-lg btn-primary">Déconnexion</a>
+            <a href="{{ path('app_logout') }}" class="btn btn-lg btn-primary">
+                <i class="fas fa-power-off mr-2"></i>
+                Déconnexion</a>
         </div>
 
     </div>

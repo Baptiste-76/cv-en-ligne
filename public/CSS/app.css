@@ -263,11 +263,7 @@ html, body {
     bottom: 5px;
 }
 
-.carousel-caption h1, .carousel-caption a {
-    font-size: 3vh;
-}
-
-.carousel-caption h3, .carousel-indicators {
+.carousel-caption h4, .carousel-indicators {
     display: none ;
 }
 
@@ -277,38 +273,24 @@ html, body {
     }
 }
 
-@media screen and (max-width: 991px) and (orientation: landscape) {
-    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
-        font-size: 8vh;
-    }
-}
-
-@media screen and (min-width: 992px) and (orientation: landscape) {
-    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
-        font-size: 5vh;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    #projects {
-        width: 70%;
-    }
-
+@media screen and (min-width: 768px) {
     .carousel-caption {
         padding-bottom: 20px;
         bottom: 20px;
     }
 
-    .carousel-caption h3 {
+    .carousel-caption h4 {
         display: block ;
     }
 
     .carousel-indicators {
         display: flex;
     }
+}
 
-    .carousel-caption h1, .carousel-caption h3, .carousel-caption a {
-        font-size: 3vh;
+@media screen and (min-width: 1200px) {
+    #projects {
+        width: 70%;
     }
 }
 
@@ -488,8 +470,8 @@ html, body {
 }
 
 /************************************ FORM *****************************************/
-label, .btn[type="submit"] {
-    font-size: 2.5vh;
+label, .btn[type="submit"], #admin-logout {
+    font-size: 2vh;
 }
 .form-control {
     background-color: #011f55;
@@ -498,7 +480,7 @@ label, .btn[type="submit"] {
 }
 
 @media screen and (orientation: landscape) {
-    label, .btn[type="submit"] {
+    label, .btn[type="submit"], #admin-logout {
         font-size: 5vh;
     }
     .form-control {
@@ -509,7 +491,7 @@ label, .btn[type="submit"] {
 }
 
 @media screen and (min-width: 992px) and (orientation: landscape) {
-    label, .btn[type="submit"] {
+    label, .btn[type="submit"], #admin-logout {
         font-size: 2.5vh;
     }
     .form-control {
@@ -520,7 +502,7 @@ label, .btn[type="submit"] {
 }
 
 @media screen and (min-width: 992px) and (orientation: landscape) {
-    label, .btn[type="submit"] {
+    label, .btn[type="submit"], #admin-logout {
         font-size: 2vh;
     }
     .form-control {
@@ -570,131 +552,13 @@ label.required:before {
     color: #cf9f69;
 }
 
-/*********************************** PICTURES *************************************/
-
-.pictures-container {
-    position: relative;
-    width: 45%;
-    padding: 5px;
-}
-
-.picture {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #0098ff;
-    overflow: hidden;
-    width: 100%;
-    height: 0;
-    transition: 0.5s ease;
-    -webkit-transition: 0.5s ease;
-}
-
-.pictures-container:hover .overlay {
-    height: 30%;
-}
-
-.text-is-visible {
-    height: 30%;
-}
-
-.text {
-    color: white;
-    font-size: 2vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-@media screen and (min-width: 768px) {
-    .pictures-container:hover .overlay {
-        height: 20%;
-    }
-    
-    .text-is-visible {
-        height: 20%;
-    }
-}
-
-@media screen and (orientation: landscape) {
-    .text {
-        font-size: 5vh
-    }
-
-    .pictures-container:hover .overlay {
-        height: 20%;
-    }
-    
-    .text-is-visible {
-        height: 20%;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .text {
-        font-size: 4vh
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .text {
-        font-size: 2.5vh
-    }
-}
-
 /************************************* LOGIN ***************************************/
 #login-form {
     color: white; 
     background-color: #0098ff;
 }
 
-#login-form label, .login-control, .login-submit {
-    font-size: 5vh !important;
-}
-
-@media screen and (min-width: 1200px) {
-    #login-form label, .login-control, .login-submit {
-        font-size: 3vh;
-    }
-}
-
 /************************************* MESSAGES ************************************/
-
-#messages-page {
-    color: white;
-}
-
-.message {
-    background-color: #0098ff;
-}
-
-.sender-contact, .message p {
-    color: white !important;
-    font-size: 2.5vh;
-}
-
-@media screen and (orientation: landscape) {
-    .message p, .sender-contact {
-        font-size: 5vh;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .message p, .sender-contact {
-        font-size: 1.5vh;
-    }
-}
 
 .page-link {
     color: #0098ff;

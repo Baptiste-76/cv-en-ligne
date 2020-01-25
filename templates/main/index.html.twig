@@ -112,39 +112,39 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="2000">
-                    <img src="pictures/yusit.png" class="d-block w-100" alt="Image de fond pour le projet Yusit">
+                    <img src="pictures/yusit.png" class="d-block w-100" alt="Photo du projet Yusit">
                     <div class="carousel-caption d-block">
-                        <h1>Yusit.fr</h1>
-                        <h3>Refonte complète du site web de l'entreprise YuSit</h3>
-                        <a href="http://www.yusit.fr" rel="noopener" target="blank" class="btn btn-danger btn-lg">Visiter le site</a>
+                        <h2>Yusit.fr</h2>
+                        <h4>Refonte complète du site web de l'entreprise YuSit</h4>
+                        <a href="http://www.yusit.fr" rel="noopener" target="blank" class="btn btn-danger btn-lg">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Visiter le site
+                        </a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="pictures/cyberpunk.jpg" class="d-block w-100" alt="Image de fond pour le projet Cyberpunk 2077">
-                    <div class="carousel-caption d-block">
-                        <h1>Cyberpunk 2077</h1>
-                        <h3>Création d'une fan-page !</h3>
-                        <a href="{{ path('cyberpunk_page') }}" class="btn btn-danger btn-lg">Voir les photos</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="pictures/symreact.png" class="d-block w-100" alt="Image de fond pour le projet Symfony - React">
+                    <img src="pictures/symreact.png" class="d-block w-100" alt="Photo du projet Symfony - React">
                     <div class="carousel-caption d-block" style="color: black">
-                        <h1>SymReact</h1>
-                        <h3>Création d'une API de gestion de factures en React</h3>
-                        <a href="{{ path('symreact_page') }}" class="btn btn-danger btn-lg">Voir les photos</a>
+                        <h2>SymReact</h2>
+                        <h4>Création d'une API de gestion de factures grâce à React & API Platform</h4>
+                        <a href="https://app-symfony-api-platform-react.herokuapp.com/#/}" rel="noopener" target="blank" class="btn btn-primary btn-lg">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Visiter le site
+                        </a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="pictures/monbnb.png" class="d-block w-100" alt="Image de fond pour le projet Mon BnB">
+                    <img src="pictures/monbnb.png" class="d-block w-100" alt="Phooto du projet Mon BnB">
                     <div class="carousel-caption d-block" style="background-color: royalblue">
-                        <h1>Mon BnB</h1>
-                        <h3>Création d'un site de BnB en Symfony 4</h3>
-                        <a href="{{ path('monbnb_page') }}" class="btn btn-danger btn-lg">Voir les photos</a>
+                        <h2>Mon BnB</h2>
+                        <h4>Création d'un site de BnB en Symfony 4</h4>
+                        <a href="https://mon-bnb.herokuapp.com/" rel="noopener" target="blank" class="btn btn-info btn-lg">
+                            <i class="fas fa-arrow-right mr-2"></i>
+                            Visiter le site
+                        </a>
                     </div>
                 </div>
             </div>
@@ -157,12 +157,6 @@
                 <span class="sr-only">Suivant</span>
             </a>
         </div> 
-        <div class="alert alert-danger mt-2 mx-auto notice" role="alert" style="max-width: 70%;">
-            <strong>Important !</strong> 
-            <br>
-            <p>Certains projets ont été réalisés à titre d'entrainement ou d'auto-formation ; ces derniers ne sont donc pas hébergés et ne sont pas visibles. Des captures d'écran des projets
-            en question sont toutefois disponibles. Merci de votre compréhension.</p>
-        </div>
     </div>
 
     <div class="container-fluid mt-5">
@@ -336,7 +330,8 @@
                             Télécharger le CV
                         </a>
                     </p>
-                    <div class="card-header h2">Des questions ? Je vous écoute !</div>
+                    <div class="card-header h2" id="form-anchor">Des questions ? Je vous écoute !</div>
+                    
                     {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class': 'my-4'}}) }}
                         <div class="row mx-2">
                             <div class="col-12 col-lg-6 mb-3">
@@ -366,7 +361,7 @@
                         </div>
                         <div class="row mx-2">
                             <div class="col-12 mb-3">
-                                <button type="submit" class="btn btn-success btn-block">
+                                <button type="submit" class="btn btn-success btn-block" onclick="setAnchor()">
                                     <i class="fas fa-share"></i>
                                     Envoyer
                                 </button>
@@ -414,3 +409,4 @@
         {% endfor %}
     {% endif %}
 {% endblock form_errors %}
+
