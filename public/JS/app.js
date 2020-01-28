@@ -1,11 +1,21 @@
-// Gestion des accordéons
+// Gestion des accordéons et des chevrons indicatifs
 $(".accordion").click(function() {
     $(this).toggleClass("active");
 
     if ($(this).next('.panel').css('display') === "block") {
-        $(this).next('.panel').css('display', 'none')
+        $(this).next('.panel').css('display', 'none') ;
     } else {
-        $(this).next('.panel').css('display', 'block')
+        $(this).next('.panel').css('display', 'block');
+    }
+    if ($(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display') === "inline-block") {
+        $(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display', 'none');
+    } else {
+        $(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display', 'inline-block');
+    }
+    if ($(this).find('img[src*="pictures/gifs/arrow-up.gif"]').css('display') === "inline-block") {
+        $(this).find('img[src*="pictures/gifs/arrow-up.gif"]').css('display', 'none');
+    } else {
+        $(this).find('img[src*="pictures/gifs/arrow-up.gif"]').css('display', 'inline-block');
     }
 });
 
@@ -101,6 +111,15 @@ function setAnchor() {
     location.hash = 'form-anchor'
 }
 
+// Gestion de la barre de progression
+window.onscroll = function() {
+    inProgress()
+};
 
-
+function inProgress() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+}
 
