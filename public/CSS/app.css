@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap');
 
 html, body {
-    background-color: #011f55;
     scroll-behavior: smooth;
 }
 
@@ -257,53 +256,40 @@ body {
     width: 100%;
 }
 
-.notice {
-    max-width: 100% !important;
-}
-
-@media screen and (min-width: 2500px) {
-    .notice {
-        font-size: 1.5vh;
-    }
-}
-
-.carousel-item {
-    border: solid #cf9f69 5px;
-}
-
 .carousel-caption {
-    padding-bottom: 0;
-    bottom: 5px;
+    padding-bottom: 15px;
+    bottom: 0px;
 }
 
-.carousel-caption h4, .carousel-indicators {
+.carousel-caption h4 {
     display: none ;
 }
 
-ol.carousel-indicators li {
-    background-color: #cf9f69;
-    height: 30px;
-    border-radius: 50%;
+.carousel-indicators {
+    position: absolute;
+    bottom: -15px;
+    margin: 0;
+    left: 0;
+    right: 0;
+    width: auto;
 }
 
-@media screen and (min-width: 576px) {
-    .carousel-item {
-        border: solid #cf9f69 10px;
-    }
+ol.carousel-indicators li {
+    float: left;
+    width: 33.33%;
+    height: 15px;
+    margin: 0;
+    border: 0;
+    background-color: #ccc;
+}
+
+ol.carousel-indicators li.active {
+    background-color: #cf9f69;
 }
 
 @media screen and (min-width: 768px) {
-    .carousel-caption {
-        padding-bottom: 20px;
-        bottom: 35px;
-    }
-
     .carousel-caption h4 {
         display: block ;
-    }
-
-    .carousel-indicators {
-        display: flex;
     }
 }
 
@@ -387,7 +373,6 @@ img[src^="pictures/gifs"] {
 
 .panel {
     padding: 5px 20px;
-    background-color: #011f55;
     color: white;
     font-family: 'Comfortaa', cursive;
     display: none;
@@ -615,6 +600,16 @@ label.required:before {
 #login-form {
     color: white; 
     background-color: #0098ff;
+}
+
+svg {
+    height: 35px !important;
+    width: 35px !important;
+}
+
+path {
+    stroke: rgb(255, 255, 255) !important;
+    fill: white !important;
 }
 
 /********************************** MESSAGES *************************************/
