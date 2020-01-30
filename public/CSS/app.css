@@ -191,7 +191,6 @@ body {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
-    z-index: 3;
 }
 
 .flip-card-front, .flip-card-back {
@@ -200,6 +199,7 @@ body {
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    z-index: 2;
 }
 
 .frontend-card-front, .backend-card-front {
@@ -215,6 +215,10 @@ body {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     z-index: 1;
+}
+
+.back-is-visible .frontend-card-back, .back-is-visible .backend-card-back {
+    z-index: 3;
 }
 
 .frontend-card-front {
