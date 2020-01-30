@@ -191,6 +191,7 @@ body {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
+    z-index: 3;
 }
 
 .flip-card-front, .flip-card-back {
@@ -213,7 +214,7 @@ body {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
-    z-index: 3;
+    z-index: 1;
 }
 
 .frontend-card-front {
