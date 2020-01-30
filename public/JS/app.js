@@ -100,13 +100,12 @@ $(document).ready(async function typeWriter() {
         $('.type-writer').append(text.charAt(i));
         i++;
         setTimeout(typeWriter, 100);
-    } 
-    // else if (i == text.length) {
-    //     await sleep();
-    //     $('.type-writer').html("");
-    //     i = 0;
-    //     typeWriter();
-    // }
+    } else if (i == text.length) {
+        await sleep();
+        $('.type-writer').html("");
+        i = 0;
+        typeWriter();
+    }
 })
 
 // Ajout d'une ancre à l'URL lorsque le formulaire est envoyé pour que la page ne scroll pas en haut automatiquement
