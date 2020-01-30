@@ -213,12 +213,12 @@ body {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
+    z-index: 3;
 }
 
 .frontend-card-front {
     background-image: url("../pictures/frontend_resized_recolored.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+
 }
 
 .frontend-card-back {
@@ -228,8 +228,6 @@ body {
 
 .backend-card-front {
     background-image: url("../pictures/backend_resized.png"); 
-    background-size: contain;
-    background-repeat: no-repeat;
 }
 
 .backend-card-back {
@@ -594,7 +592,7 @@ label.required:before {
 /*********************************** FOOTER **************************************/
 
 .footer {
-    color: white;
+    color: #cf9f69;
     margin-bottom: 20px;
 }
 

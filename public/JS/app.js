@@ -78,11 +78,11 @@ $(document).ready(function() {
 })
 
 // Gestion des cadres "front" et "back" pour les appareils tactiles
-$('.flip-card-front').bind('click', function(event) {
+$('.flip-card-front').bind('touchstart', function(event) {
     event.preventDefault();
     $(this).closest('.flip-card-inner').toggleClass('back-is-visible'); 
 })
-$('.flip-card-back ul li').bind('click', function(event) {
+$('.flip-card-back ul li').bind('touchstart', function(event) {
     event.preventDefault();
     $(this).closest('.flip-card-inner').toggleClass('back-is-visible'); 
 })
