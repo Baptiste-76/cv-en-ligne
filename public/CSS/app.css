@@ -53,6 +53,10 @@ body {
     color: #011f55 !important;
 }
 
+.nav-item:hover:not(.active) .nav-link.btn {
+    opacity: 0.5;
+}
+
 @media screen and (orientation: landscape) {
     .nav-item {
         height: 10vh;
@@ -73,6 +77,19 @@ body {
     }
 }
 
+.menu-logo {
+    position: fixed;
+    left: 10px;
+    top: 20px;
+    color: #0072bf;
+    z-index: 2;
+}
+
+.bx-menu-alt-left {
+    font-size: 8vh;
+    opacity: 0.7;
+}
+
 /********************************* JUMBOTRON **************************************/
 
 #goals {
@@ -80,22 +97,39 @@ body {
 }
 
 .type-writer {
-    font-size: 6vh;
+    font-size: 5vh;
 }
 
 .goals-content {
-    font-size: 4vh !important;
+    font-size: 3.5vh !important;
 }
 
 @media screen and (min-height: 768px) {
     .goals-content {
         font-size: 3vh !important;
     }
+
+    .type-writer {
+        font-size: 6vh;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (min-height: 768px) and (max-width: 576px) {
+    .goals-content {
+        font-size: 2.5vh !important;
+    }
+
+    .type-writer {
+        font-size: 4vh;
+        margin-left: 5%;
+    }
 }
 
 @media screen and (orientation: landscape) {
     .type-writer {
-        font-size: 12vh;
+        font-size: 16vh;
+        margin-left: 5%;
     }
     
     .goals-content {
@@ -116,6 +150,7 @@ body {
 @media screen and (min-width: 1200px) and (orientation: landscape) {
     .type-writer {
         font-size: 10vh;
+        margin-left: 5%
     }
     
     .goals-content {
@@ -126,6 +161,7 @@ body {
 @media screen and (min-width: 2500px) and (orientation: landscape) {
     .type-writer {
         font-size: 8vh;
+        margin-left: 5%;
     }
     
     .goals-content {
@@ -610,7 +646,7 @@ label.required:before {
 /*********************************** FOOTER **************************************/
 
 .footer {
-    color: white;
+    color: #011f55;
     margin-bottom: 20px;
 }
 

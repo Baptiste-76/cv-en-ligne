@@ -21,56 +21,61 @@ $(".accordion").click(function() {
     inProgress();
 });
 
-// Gestion des liens actifs de la Navbar
+// Au clic sur un des liens de la Navbar
 $(".nav-link").click(function() {
+    // Gestion des liens actifs de la Navbar
     $(".nav-item.active").removeClass("active");
     $(this).parent().closest("li").toggleClass("active");
+
+    // Disparition de la Navbar lorsque'on clique sur un de ses liens pour les appareils mobiles (sur les autres, le :hover prend le dessus)
+    $('#myNavbar').toggleClass('show');
+
+    // scrolling automatique vers la cible du lien
+    $('html,body').animate({
+        scrollTop: $(this).offset().top
+    }, 'slow');
+    return false;
 })
 
-// Gestion de l'opacité de la barre de navigation pour les desktops OU repli de la barre de navigation au clic sur un des liens pour les appareils mobiles
-if (window.matchMedia("(min-width: 1200px").matches) {
-    $(document).scroll(function() {
-        if (+$('.navbar').css('opacity') === 1 && !$('.navbar').is(":hover")) {
-            $('.navbar').css('opacity', 0)
-        }
-    })
-} else {
-    $('.nav-link').bind('click', function() {
-        $('#myNavbar').toggleClass('show');
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 'slow');
-        return false;
-    })
+// Disparition de la Navbar dès que l'utilisateur scroll la page sauf si la souris est encore dessus
+$(document).scroll(function() {
+    if (!$('.navbar').is(":hover")) {
+        $('.navbar').css('display', 'none')
+    }
+})
+
+// Centrage de la photo et du toggler de la Navbar pour les appareils mobiles (évite un bug qui fait que la page recharge lorsqu'on clique sur le logo qui fait apparaître la Navbar car le Navbrand est en dessous)
+if (window.matchMedia("(max-width: 1200px").matches) {
+    $('.navbar-brand').css('margin-left', 'auto');
+    $('.navbar-toggler').css('margin-right', 'auto');
 }
 
 // Apparation de la Navbar lorsque l'utilisateur est en haut de page
 $(window).scroll(function() {
     if (window.pageYOffset == 0.0)
-        $('.navbar').css('opacity', 1)
+        $('.navbar').css('display', 'flex')
 })
 
-// Apparition de la Navbar lorsque la souris entre dans sa zone
-$('.navbar').mouseenter(function() {
-    $(this).css('opacity', 1);
+// Apparition de la Navbar lorsque la souris entre dans la zone du menu-logo ou lorsque'on clique sur l'icône (pour les appareils tactiles)
+$('.menu-logo').mouseenter(function() {
+    $('.navbar').css('display', 'flex');
+})
+$('.bx-menu-alt-left').bind('touchstart', function(event) {
+    event.preventDefault();
+    $('.navbar').css('display', 'flex');
 })
 
 // Disparition de la Navbar lorsque la souris quitte sa zone (sauf si l'utilisateur se trouve en haut de la page au moment de quitter la zone de la Navbar)
 $('.navbar').mouseleave(function() {
     if (window.pageYOffset != 0.0) {
-        setTimeout(function() {
-            $('.navbar').css('opacity', 0)
-        }, 1000)
+        $('.navbar').css('display', 'none')
     }
 })
 
-// Gestion de l'écart entre la Navbar et le 1er Jumbotron
+// Gestion de l'écart entre la Navbar et le 1er container de chaque page
 $(document).ready(function() {
     let margin = ($('.navbar').height())*2;
     $('#goals').css('margin-top', margin + "px");
-    $('#cyberpunk').css('margin-top', margin + "px");
-    $('#symreact').css('margin-top', margin + "px");
-    $('#monbnb').css('margin-top', margin + "px");
     $('#login-form').css('margin-top', margin + "px");
     $('#messages-page').css('margin-top', margin + "px");
     $('#message-page').css('margin-top', margin + "px");
