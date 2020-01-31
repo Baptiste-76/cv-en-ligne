@@ -77,15 +77,10 @@ $(document).ready(function() {
 
 })
 
-// Gestion des cadres "front" et "back" pour les appareils tactiles
-$('.flip-card-front').bind('touchstart', function(event) {
-    event.preventDefault();
-    $(this).closest('.flip-card-inner').toggleClass('back-is-visible'); 
-})
-$('.flip-card-back ul li').bind('touchstart', function(event) {
-    event.preventDefault();
-    $(this).closest('.flip-card-inner').toggleClass('back-is-visible'); 
-})
+// Gestion des cadres "front" et "back"
+$('.card').click(function(){
+    $(this).toggleClass('flipped');
+});
 
 // Gestion du "Bonjour à tous" dynamique (type machine à écrire)
 let i = 0;
