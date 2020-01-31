@@ -78,7 +78,7 @@ $(document).ready(function() {
 })
 
 // Gestion des cadres "front" et "back"
-$('.card').click(function(){
+$('.card-inner').click(function(){
     $(this).toggleClass('flipped');
 });
 
