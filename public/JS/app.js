@@ -44,12 +44,6 @@ $(document).scroll(function() {
     }
 })
 
-// Centrage de la photo et du toggler de la Navbar pour les appareils mobiles (évite un bug qui fait que la page recharge lorsqu'on clique sur le logo qui fait apparaître la Navbar car le Navbrand est en dessous)
-if (window.matchMedia("(max-width: 1200px").matches) {
-    $('.navbar-brand').css('margin-left', 'auto');
-    $('.navbar-toggler').css('margin-right', 'auto');
-}
-
 // Apparation de la Navbar lorsque l'utilisateur est en haut de page
 $(window).scroll(function() {
     if (window.pageYOffset == 0.0)

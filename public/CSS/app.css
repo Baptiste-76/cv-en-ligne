@@ -21,6 +21,14 @@ body {
     -webkit-transition: all 500ms;
 }
 
+.navbar-brand {
+    margin-left: auto;
+}
+
+.navbar-toggler {
+    margin-right: auto;
+}
+
 .navbar:hover {
     opacity: 1;
 }
