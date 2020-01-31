@@ -20,7 +20,7 @@
         {% endfor %}
 
 
-        <div class="table-responsive-md my-3">
+        <div class="table-responsive-lg my-3">
             <table class="table table-hover table-bordered text-white lead" style="background-color: #0098ff;">
                 <thead class="thead bg-light" style="color: black;">
                     <tr class="text-center">
@@ -60,7 +60,7 @@
                                     Pas de mail
                                 {% endif %}   
                             </td>
-                            <td>
+                            <td style="display: flex; justify-content: center">
                                 <a href="{{ path('message_delete', {'id': message.id}) }}" class="btn btn-primary mr-2 mb-2" style="font-size: 1.015625rem;">
                                     <i class='bx bxs-trash bx-sm mr-2'></i>
                                     Suppr.
