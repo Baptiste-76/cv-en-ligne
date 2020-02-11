@@ -68,12 +68,12 @@ $('.navbar').mouseleave(function() {
 
 // Gestion de l'écart entre la Navbar et le 1er container de chaque page
 $(document).ready(function() {
-    let margin = ($('.navbar').height())*2;
+    let margin = ($('.navbar').height());
     $('#goals').css('margin-top', margin + "px");
     $('#login-form').css('margin-top', margin + "px");
     $('#messages-page').css('margin-top', margin + "px");
     $('#message-page').css('margin-top', margin + "px");
-
+    $('.content').css('min-height', "calc(100vh - 90px - " + margin + "px)");
 })
 
 // Gestion des cadres "front" et "back"

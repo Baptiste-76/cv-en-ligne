@@ -16,75 +16,75 @@
     </head>
 
     <body>
-        <div class="menu-logo">
-            <i class='bx bx-menu-alt-left'></i>
-        </div>
-        <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
-            <a class="navbar-brand" href="{{ path('homepage') }}">
-                <img src="../../pictures/photo.jpg" alt="Photo de Baptiste Bidaux" class="avatar">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse text-center" id="myNavbar">
-                <ul class="navbar-nav align-items-center" style="width: 100%;">
-                    <li class="nav-item mx-auto active">
-                        <a class="nav-link btn" href={{ path('homepage', {'_fragment': 'goals'}) }}>
-                            <i class='bx bx-bullseye bx-tada bx-fw mr-2'></i>
-                            Objectifs
-                        </a>
-                    </li>
-                    <li class="nav-item mx-auto">
-                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'technologies'}) }}">
-                            <i class='bx bx-code-alt bx-tada bx-fw mr-2' ></i>
-                            Langages & Technologies
-                        </a>
-                    </li>
-                    <li class="nav-item mx-auto">
-                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'projects'}) }}">
-                            <i class='bx bx-carousel bx-tada bx-fw mr-2' ></i>
-                            Réalisations
-                        </a>
-                    </li>
-                    <li class="nav-item mx-auto">
-                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'experiences'}) }}">
-                            <i class='bx bx-task bx-tada bx-fw mr-2' ></i>
-                            Expériences
-                        </a>
-                    </li>
-                    <li class="nav-item mx-auto">
-                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'diplomas'}) }}">
-                            <i class='bx bxs-graduation bx-tada bx-fw mr-2'></i>
-                            Formations
-                        </a>
-                    </li>
-                    <li class="nav-item mx-auto">
-                        <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'contacts'}) }}">
-                            <i class='bx bxs-id-card bx-tada bx-fw mr-2' ></i>
-                            Contacts
-                        </a>
-                    </li>
-                </ul>
+        <div class="content">
+            <div class="menu-logo">
+                <i class='bx bx-menu-alt-left'></i>
             </div>
-        </nav>
+            <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
+                <a class="navbar-brand" href="{{ path('homepage') }}">
+                    <img src="../../pictures/photo.jpg" alt="Photo de Baptiste Bidaux" class="avatar">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse text-center" id="myNavbar">
+                    <ul class="navbar-nav align-items-center" style="width: 100%;">
+                        <li class="nav-item mx-auto active">
+                            <a class="nav-link btn" href={{ path('homepage', {'_fragment': 'goals'}) }}>
+                                <i class='bx bx-bullseye bx-tada bx-fw mr-2'></i>
+                                Objectifs
+                            </a>
+                        </li>
+                        <li class="nav-item mx-auto">
+                            <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'technologies'}) }}">
+                                <i class='bx bx-code-alt bx-tada bx-fw mr-2' ></i>
+                                Langages & Technologies
+                            </a>
+                        </li>
+                        <li class="nav-item mx-auto">
+                            <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'projects'}) }}">
+                                <i class='bx bx-carousel bx-tada bx-fw mr-2' ></i>
+                                Réalisations
+                            </a>
+                        </li>
+                        <li class="nav-item mx-auto">
+                            <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'experiences'}) }}">
+                                <i class='bx bx-task bx-tada bx-fw mr-2' ></i>
+                                Expériences
+                            </a>
+                        </li>
+                        <li class="nav-item mx-auto">
+                            <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'diplomas'}) }}">
+                                <i class='bx bxs-graduation bx-tada bx-fw mr-2'></i>
+                                Formations
+                            </a>
+                        </li>
+                        <li class="nav-item mx-auto">
+                            <a class="nav-link btn" href="{{ path('homepage', {'_fragment': 'contacts'}) }}">
+                                <i class='bx bxs-id-card bx-tada bx-fw mr-2' ></i>
+                                Contacts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-        {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
 
-        <div class="footer text-center pt-2" style="margin-bottom: 0 !important;">
-            <h5>Copyright &copy; Tous droits réservés - Baptiste Bidaux - {{ "now" | date("Y")}}</h5>
-            <h5>
-                <a href="https://icons8.com/icon/32343/heroku" style="color: #011f55;">Heroku icon by Icons8</a>
-            </h5>
+            {% block javascripts %}{% endblock %}
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js" type="text/javascript"></script>
+            <script src="/JS/app.js"></script>
         </div>
-
-
-        {% block javascripts %}{% endblock %}
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.js" type="text/javascript"></script>
-        <script src="/JS/app.js"></script>
+        <div class="footer text-center pt-2">
+            <h6>Copyright &copy; Tous droits réservés - Baptiste Bidaux - {{ "now" | date("Y")}}</h6>
+            <h6>
+                <a href="https://icons8.com/icon/32343/heroku" style="color: #011f55;">Heroku icon by Icons8</a>
+            </h6>
+        </div>
     </body>
 </html>

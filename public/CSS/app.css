@@ -4,9 +4,6 @@
 html, body {
     scroll-behavior: smooth;
     font-family: 'Comfortaa', cursive;
-}
-
-body {
     margin: 0;
     min-height: 100vh;
     background-image: linear-gradient(to bottom right, rgb(1, 31, 85), rgb(128, 143, 170));
@@ -826,7 +823,7 @@ label.required:before {
 
 .footer {
     color: #011f55;
-    margin-bottom: 20px;
+    height: 70px;
 }
 
 /*********************************** LOGIN ***************************************/
@@ -835,12 +832,12 @@ label.required:before {
     background-color: #0098ff;
 }
 
-svg {
+svg[xmlns="http://www.w3.org/2000/svg"] {
     height: 35px !important;
     width: 35px !important;
 }
 
-path {
+svg[xmlns="http://www.w3.org/2000/svg"] path {
     stroke: rgb(255, 255, 255) !important;
     fill: white !important;
 }
