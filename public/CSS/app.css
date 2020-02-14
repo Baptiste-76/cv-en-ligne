@@ -112,6 +112,58 @@ html, body {
     }
 }
 
+/*********************************** ALERT ****************************************/
+#alert {
+    font-size: 2.5vh;
+    font-weight: 300;
+}
+
+@media screen and (orientation: landscape) {
+    #alert {
+        font-size: 4vh;
+    }
+}
+
+@media screen and (min-height: 768px) {
+    #alert {
+        font-size: 1.5vh;
+    }
+}
+
+@media screen and (min-height: 768px) and (max-width: 576px) {
+    #alert {
+        font-size: 1.8vh;
+    }
+}
+
+@media screen and (min-width: 992px) and (orientation: landscape) {
+    #alert {
+        font-size: 2.5vh;
+    }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+    #alert {
+        width: 75%;
+        font-size: 2vh;
+    }
+}
+
+@media screen and (min-width: 1440px) and (orientation: landscape) {
+    #alert {
+        width: 50%;
+        font-size: 2vh;
+    }
+}
+
+@media screen and (min-width: 2500px) and (orientation: landscape) {
+    #alert {
+        width: 25%;
+        font-size: 1.2vh;
+    }
+}
+
+
 /********************************* JUMBOTRON **************************************/
 
 #goals {

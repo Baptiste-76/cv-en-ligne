@@ -12,6 +12,28 @@
         </div>  
     </div>
 
+    <div class="container pt-5 pb-2" id="alert">
+        <div class="alert alert-dismissible fade show text-white mx-auto py-4" role="alert" style="background-color: #0098ff;">
+            <h3 class="alert-heading mb-3">
+                Avertissement
+                <i class="fas fa-exclamation-triangle ml-2"></i>
+            </h3>
+            <p>
+                Ce site est hébergé sur 
+                <strong style="font-weight: 900;">
+                    <a href="https://id.heroku.com/login" rel="noopener" target="blank" alt="Lien vers Heroku" style="color: white; text-decoration: underline">Heroku</a> 
+                </strong>
+                via la <strong style="font-weight: 900;">formule gratuite</strong>. Par conséquent, le site se met en <strong style="font-weight: 900;">sommeil après 30 minutes d'inactivité</strong> ; 
+                le 1er chargement peut donc être long.
+            </p>
+            <hr class="w-75" style="border: 1px solid white">
+            <p class="mb-0">Merci de votre compréhension</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
     <div class="container py-5 mb-5" id="goals">
         <div class="jumbotron" style="background-color: #cf9f69;">
             <i class="bx bxs-quote-alt-left bx-lg"></i>
@@ -117,6 +139,7 @@
                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
                 <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="2000">
@@ -158,6 +181,17 @@
                         <h2>Ma Boite à Recettes</h2>
                         <h4>Création d'un site de Recettes en React</h4>
                         <a href="https://my-recipe-box-baptiste.netlify.com" rel="noopener" target="blank" class="btn btn-primary btn-lg">
+                            <i class='bx bx-right-arrow-alt bx-flashing bx-md mr-2'></i>
+                            Visiter le site
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="pictures/chatbox.png" class="d-block w-100" alt="Photo du projet Ma Boîte à Recettes">
+                    <div class="carousel-caption d-block" style="color: black; background-color: white;">
+                        <h2>Chatbox</h2>
+                        <h4>Création d'un mini Chat en React</h4>
+                        <a href="https://chatbox-baptiste.netlify.com" rel="noopener" target="blank" class="btn btn-info btn-lg">
                             <i class='bx bx-right-arrow-alt bx-flashing bx-md mr-2'></i>
                             Visiter le site
                         </a>
