@@ -7,11 +7,13 @@ $(".accordion").click(function() {
     } else {
         $(this).next('.panel').css('display', 'block');
     }
+
     if ($(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display') === "inline-block") {
         $(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display', 'none');
     } else {
         $(this).find('img[src*="pictures/gifs/arrow-down.gif"]').css('display', 'inline-block');
     }
+    
     if ($(this).find('img[src*="pictures/gifs/arrow-up.gif"]').css('display') === "inline-block") {
         $(this).find('img[src*="pictures/gifs/arrow-up.gif"]').css('display', 'none');
     } else {
