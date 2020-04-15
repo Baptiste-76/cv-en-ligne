@@ -9,6 +9,12 @@ html, body {
     background-image: linear-gradient(to bottom right, rgb(1, 31, 85), rgb(128, 143, 170));
 }
 
+@media screen and (min-width: 2500px) {
+    .container-fluid {
+        width: 80%;
+    }
+}
+
 /*********************************** NAVBAR **************************************/
 
 .navbar {
@@ -494,7 +500,7 @@ ol.carousel-indicators li.active {
 
 @media screen and (min-width: 1200px) {
     #projects {
-        width: 70%;
+        width: 60%;
     }
 
     .carousel-caption h2 {
